@@ -2,7 +2,7 @@
  * Chess API client — communicates with the Flask backend.
  */
 
-const BASE_URL = '/api';
+const BASE_URL = import.meta.env.PROD ? '/_/backend/api' : '/api';
 
 async function request(endpoint, options = {}) {
   const url = `${BASE_URL}${endpoint}`;
